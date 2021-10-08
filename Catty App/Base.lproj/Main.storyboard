@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Set Up Lock Screen View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SetUpLockScreenViewController" customModule="Catty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock_Screen_Background" translatesAutoresizingMaskIntoConstraints="NO" id="Jhn-1I-Q0J">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="scrollableAxes" translatesAutoresizingMaskIntoConstraints="NO" id="tRL-WH-lFu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kO-SJ-Y3q">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="838.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIh-BT-2mp">
+                                                <rect key="frame" x="20" y="354.5" width="374" height="348"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Setup code for screen locking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thm-EG-dim">
+                                                        <rect key="frame" x="0.0" y="108" width="374" height="26"/>
+                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="23"/>
+                                                        <color key="textColor" red="0.62691502394468024" green="0.4653709340658625" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubl-As-tRL">
+                                                        <rect key="frame" x="0.0" y="255.5" width="374" height="72.5"/>
+                                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
+                                                        <state key="normal" title="Continue" backgroundImage="LockScreen_Continue_Button">
+                                                            <color key="titleColor" red="0.28132172857170373" green="0.29493246707637971" blue="0.32602938257082548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                    </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6 DIGITS" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rqn-UD-z7u">
+                                                        <rect key="frame" x="0.0" y="152" width="374" height="52.5"/>
+                                                        <color key="textColor" red="0.61766859069671387" green="0.45879340138418889" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Catty App!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKW-iK-qmi">
+                                                        <rect key="frame" x="0.0" y="39" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
+                                                        <color key="textColor" red="0.63018131214538964" green="0.43017615420383892" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <viewLayoutGuide key="safeArea" id="0z2-dd-qcn"/>
+                                                <constraints>
+                                                    <constraint firstItem="Ubl-As-tRL" firstAttribute="top" secondItem="Rqn-UD-z7u" secondAttribute="bottom" constant="51" id="5PA-04-Ntn"/>
+                                                    <constraint firstItem="Ubl-As-tRL" firstAttribute="trailing" secondItem="0z2-dd-qcn" secondAttribute="trailing" id="CaT-lk-Tp2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ubl-As-tRL" secondAttribute="bottom" constant="20" id="Fs6-tZ-xTA"/>
+                                                    <constraint firstItem="thm-EG-dim" firstAttribute="trailing" secondItem="0z2-dd-qcn" secondAttribute="trailing" id="IZx-to-FAQ"/>
+                                                    <constraint firstItem="thm-EG-dim" firstAttribute="top" secondItem="PKW-iK-qmi" secondAttribute="bottom" constant="35" id="LyA-QK-dXg"/>
+                                                    <constraint firstItem="PKW-iK-qmi" firstAttribute="trailing" secondItem="0z2-dd-qcn" secondAttribute="trailing" id="Pt0-kc-UcK"/>
+                                                    <constraint firstAttribute="height" constant="348" id="cVg-a4-Vsg"/>
+                                                    <constraint firstItem="thm-EG-dim" firstAttribute="leading" secondItem="0z2-dd-qcn" secondAttribute="leading" id="g4S-E6-YK2"/>
+                                                    <constraint firstItem="PKW-iK-qmi" firstAttribute="top" secondItem="0z2-dd-qcn" secondAttribute="top" constant="39" id="kGt-w9-f2s"/>
+                                                    <constraint firstItem="Rqn-UD-z7u" firstAttribute="top" secondItem="thm-EG-dim" secondAttribute="bottom" constant="18" id="mJn-H5-jp3"/>
+                                                    <constraint firstItem="PKW-iK-qmi" firstAttribute="leading" secondItem="0z2-dd-qcn" secondAttribute="leading" id="oYC-eK-ism"/>
+                                                    <constraint firstItem="Ubl-As-tRL" firstAttribute="leading" secondItem="0z2-dd-qcn" secondAttribute="leading" id="pr6-Xc-QFe"/>
+                                                    <constraint firstItem="Rqn-UD-z7u" firstAttribute="trailing" secondItem="0z2-dd-qcn" secondAttribute="trailing" id="uXa-ku-sQj"/>
+                                                    <constraint firstItem="Rqn-UD-z7u" firstAttribute="leading" secondItem="0z2-dd-qcn" secondAttribute="leading" id="z3h-sD-sdQ"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="BIh-BT-2mp" secondAttribute="trailing" constant="20" id="M1G-I7-ep0"/>
+                                            <constraint firstAttribute="bottom" secondItem="BIh-BT-2mp" secondAttribute="bottom" constant="136" id="fRu-K7-5Ha"/>
+                                            <constraint firstItem="BIh-BT-2mp" firstAttribute="leading" secondItem="6kO-SJ-Y3q" secondAttribute="leading" constant="20" id="zgS-HL-azA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6kO-SJ-Y3q" firstAttribute="leading" secondItem="CIB-wG-9Os" secondAttribute="leading" id="7Au-im-HkO"/>
+                                    <constraint firstItem="6kO-SJ-Y3q" firstAttribute="trailing" secondItem="CIB-wG-9Os" secondAttribute="trailing" id="CEL-4c-OeN"/>
+                                    <constraint firstItem="6kO-SJ-Y3q" firstAttribute="width" secondItem="QA3-Sr-Gr4" secondAttribute="width" id="Fyg-GE-tH6"/>
+                                    <constraint firstItem="6kO-SJ-Y3q" firstAttribute="top" secondItem="CIB-wG-9Os" secondAttribute="top" id="SSi-9A-bEX"/>
+                                    <constraint firstItem="6kO-SJ-Y3q" firstAttribute="bottom" secondItem="CIB-wG-9Os" secondAttribute="bottom" id="jdp-XP-hfA"/>
+                                    <constraint firstItem="6kO-SJ-Y3q" firstAttribute="height" secondItem="QA3-Sr-Gr4" secondAttribute="height" multiplier="1.287" constant="-258" id="rPn-fx-TfP"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="CIB-wG-9Os"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="QA3-Sr-Gr4"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jhn-1I-Q0J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="85O-6H-AYx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jhn-1I-Q0J" secondAttribute="bottom" id="LEV-jn-ZOH"/>
+                            <constraint firstItem="Jhn-1I-Q0J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Msq-70-MHg"/>
+                            <constraint firstItem="tRL-WH-lFu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NPF-lb-oFk"/>
+                            <constraint firstItem="tRL-WH-lFu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="THP-He-NtZ"/>
+                            <constraint firstAttribute="trailing" secondItem="tRL-WH-lFu" secondAttribute="trailing" id="UsX-rN-5cQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jhn-1I-Q0J" secondAttribute="trailing" id="Yn3-B6-ElF"/>
+                            <constraint firstAttribute="bottom" secondItem="tRL-WH-lFu" secondAttribute="bottom" id="YuG-Ab-DsO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="6kO-SJ-Y3q" id="ezH-7P-nIY"/>
+                        <outlet property="continueButton" destination="Ubl-As-tRL" id="1ED-Hm-Fb0"/>
+                        <outlet property="scrollView" destination="tRL-WH-lFu" id="Tdm-TF-YHP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.086956521739133" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LockScreen_Continue_Button" width="378" height="72.5"/>
+        <image name="Lock_Screen_Background" width="440" height="818"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
