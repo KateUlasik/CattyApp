@@ -7,6 +7,10 @@
 
 import UIKit
 
+struct Constants {
+    static let savePasswordKey = "our_password"
+}
+
 class SetUpLockScreenViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var continueButton: UIButton!
@@ -44,6 +48,23 @@ class SetUpLockScreenViewController: UIViewController {
     @objc func contentViewDidTap(_ sender: Any) {
         passwordTextField.resignFirstResponder()
     }
+    
+    @IBAction func continueDidPress(_ sender: Any) {
+        let password = passwordTextField.text
+        
+        if let password = password, password.count == 6 {
+            UserDefaults.standard.set(password, forKey: Constants.savePasswordKey)
+            print("Password was saved saccessful")
+        } else {
+            passwordTextField.text = "Wrong password..."
+        }
+    }
+    
+    @IBAction func recoverPssDidPress(_ sender: Any) {
+        let password = UserDefaults.standard.string(forKey: Constants.savePasswordKey)
+        passwordTextField.text = "Recovered password is \(password)"
+    }
+    
 }
 
 
