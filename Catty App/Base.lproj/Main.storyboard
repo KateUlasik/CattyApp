@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -72,26 +73,18 @@
                                                     <constraint firstItem="Rqn-UD-z7u" firstAttribute="leading" secondItem="0z2-dd-qcn" secondAttribute="leading" id="z3h-sD-sdQ"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="urv-ZO-COj" userLabel="Tappable View">
-                                                <rect key="frame" x="96" y="710" width="240" height="88"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="dts-Vv-da7" appends="YES" id="MT5-Gj-U5T"/>
-                                                    <outletCollection property="gestureRecognizers" destination="dts-Vv-da7" appends="YES" id="1TB-Q9-akl"/>
-                                                    <outletCollection property="gestureRecognizers" destination="dts-Vv-da7" appends="YES" id="57X-cP-mIh"/>
-                                                    <outletCollection property="gestureRecognizers" destination="dts-Vv-da7" appends="YES" id="q3I-Lf-h7e"/>
-                                                </connections>
-                                            </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="BIh-BT-2mp" secondAttribute="trailing" constant="20" id="M1G-I7-ep0"/>
                                             <constraint firstAttribute="bottom" secondItem="BIh-BT-2mp" secondAttribute="bottom" constant="136" id="fRu-K7-5Ha"/>
                                             <constraint firstItem="BIh-BT-2mp" firstAttribute="leading" secondItem="6kO-SJ-Y3q" secondAttribute="leading" constant="20" id="zgS-HL-azA"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ync-uy-GaW" appends="YES" id="J4c-ay-O15"/>
+                                        </connections>
                                     </view>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="6kO-SJ-Y3q" firstAttribute="leading" secondItem="CIB-wG-9Os" secondAttribute="leading" id="7Au-im-HkO"/>
                                     <constraint firstItem="6kO-SJ-Y3q" firstAttribute="trailing" secondItem="CIB-wG-9Os" secondAttribute="trailing" id="CEL-4c-OeN"/>
@@ -119,16 +112,14 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="6kO-SJ-Y3q" id="ezH-7P-nIY"/>
+                        <outlet property="contentViewTapGestureRecognizer" destination="ync-uy-GaW" id="3Om-BD-3vc"/>
                         <outlet property="continueButton" destination="Ubl-As-tRL" id="1ED-Hm-Fb0"/>
+                        <outlet property="passwordTextField" destination="Rqn-UD-z7u" id="0KG-q1-Bag"/>
                         <outlet property="scrollView" destination="tRL-WH-lFu" id="Tdm-TF-YHP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="dts-Vv-da7">
-                    <connections>
-                        <action selector="didTapView:" destination="BYZ-38-t0r" id="2CB-5X-fts"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ync-uy-GaW"/>
             </objects>
             <point key="canvasLocation" x="-26.086956521739133" y="87.723214285714278"/>
         </scene>
