@@ -76,20 +76,10 @@
                                                     <constraint firstItem="Rqn-UD-z7u" firstAttribute="leading" secondItem="0z2-dd-qcn" secondAttribute="leading" id="z3h-sD-sdQ"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-36-hhd">
-                                                <rect key="frame" x="122.5" y="759" width="169.5" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="RECOVER PASSWORD"/>
-                                                <connections>
-                                                    <action selector="recoverPssDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="03V-Ai-9FO"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="BIh-BT-2mp" secondAttribute="trailing" constant="20" id="M1G-I7-ep0"/>
-                                            <constraint firstItem="dt2-36-hhd" firstAttribute="centerX" secondItem="6kO-SJ-Y3q" secondAttribute="centerX" id="dwV-Bf-7of"/>
                                             <constraint firstAttribute="bottom" secondItem="BIh-BT-2mp" secondAttribute="bottom" constant="136" id="fRu-K7-5Ha"/>
-                                            <constraint firstAttribute="bottom" secondItem="dt2-36-hhd" secondAttribute="bottom" constant="48.5" id="vh2-pN-EBy"/>
                                             <constraint firstItem="BIh-BT-2mp" firstAttribute="leading" secondItem="6kO-SJ-Y3q" secondAttribute="leading" constant="20" id="zgS-HL-azA"/>
                                         </constraints>
                                         <connections>
