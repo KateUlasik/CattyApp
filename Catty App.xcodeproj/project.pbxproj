@@ -13,6 +13,7 @@
 		602312432709058600C7612C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602312412709058600C7612C /* Main.storyboard */; };
 		602312452709058600C7612C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602312442709058600C7612C /* Assets.xcassets */; };
 		602312482709058600C7612C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602312462709058600C7612C /* LaunchScreen.storyboard */; };
+		60231252271DB2B700C7612C /* SecondScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60231251271DB2B700C7612C /* SecondScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		602312442709058600C7612C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		602312472709058600C7612C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		602312492709058600C7612C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60231251271DB2B700C7612C /* SecondScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				6023123D2709058600C7612C /* SceneDelegate.swift */,
 				6023123F2709058600C7612C /* SetUpLockScreenViewController.swift */,
 				602312412709058600C7612C /* Main.storyboard */,
+				60231251271DB2B700C7612C /* SecondScreen.storyboard */,
 				602312442709058600C7612C /* Assets.xcassets */,
 				602312462709058600C7612C /* LaunchScreen.storyboard */,
 				602312492709058600C7612C /* Info.plist */,
@@ -126,6 +129,7 @@
 			files = (
 				602312482709058600C7612C /* LaunchScreen.storyboard in Resources */,
 				602312452709058600C7612C /* Assets.xcassets in Resources */,
+				60231252271DB2B700C7612C /* SecondScreen.storyboard in Resources */,
 				602312432709058600C7612C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
