@@ -75,17 +75,8 @@
                                                     <constraint firstItem="Rqn-UD-z7u" firstAttribute="leading" secondItem="0z2-dd-qcn" secondAttribute="leading" id="z3h-sD-sdQ"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="293-BW-p6E">
-                                                <rect key="frame" x="173" y="779" width="68" height="30"/>
-                                                <state key="normal" title="RECOVER"/>
-                                                <connections>
-                                                    <action selector="recoverPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Xc-Zs-JID"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="293-BW-p6E" firstAttribute="centerX" secondItem="6kO-SJ-Y3q" secondAttribute="centerX" id="BAh-R4-W0i"/>
-                                            <constraint firstAttribute="bottom" secondItem="293-BW-p6E" secondAttribute="bottom" constant="29.5" id="Jjo-un-axd"/>
                                             <constraint firstAttribute="trailing" secondItem="BIh-BT-2mp" secondAttribute="trailing" constant="20" id="M1G-I7-ep0"/>
                                             <constraint firstAttribute="bottom" secondItem="BIh-BT-2mp" secondAttribute="bottom" constant="136" id="fRu-K7-5Ha"/>
                                             <constraint firstItem="BIh-BT-2mp" firstAttribute="leading" secondItem="6kO-SJ-Y3q" secondAttribute="leading" constant="20" id="zgS-HL-azA"/>
