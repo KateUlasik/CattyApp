@@ -33,9 +33,7 @@ class SetUpLockScreenViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if let _ = recover() {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .red
-        
+        let vc = PasswordViewController(nibName: nil, bundle: nil)
         self.present(vc, animated: true, completion: nil)
     }
     }
