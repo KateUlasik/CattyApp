@@ -32,10 +32,10 @@ class SetUpLockScreenViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let _ = recover() {
-        let vc = PasswordViewController(nibName: nil, bundle: nil)
-        self.present(vc, animated: true, completion: nil)
-    }
+//        if let _ = recover() {
+//        let vc = PasswordViewController(nibName: nil, bundle: nil)
+//        self.present(vc, animated: true, completion: nil)
+//    }
     }
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
