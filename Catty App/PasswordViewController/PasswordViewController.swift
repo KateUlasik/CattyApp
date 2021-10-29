@@ -9,7 +9,7 @@ import UIKit
 
 class PasswordViewController: UIViewController {
     var currentPassword: String = ""
-
+    
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -21,25 +21,27 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var button9: UIButton!
     @IBOutlet weak var button0: UIButton!
     
-    
+    @IBOutlet weak var bubbleImageView1: UIImageView!
+    @IBOutlet weak var bubbleImageView2: UIImageView!
+    @IBOutlet weak var bubbleImageView3: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     
     @IBAction func buttonDidTap(_ sender: Any) {
@@ -50,33 +52,64 @@ class PasswordViewController: UIViewController {
         } else if let button = sender as? UIButton, button == button3 {
             currentPassword = currentPassword + "3"
         }    else if let button = sender as? UIButton, button == button4 {
-                currentPassword = currentPassword + "4"
+            currentPassword = currentPassword + "4"
         }    else if let button = sender as? UIButton, button == button5 {
-                currentPassword = currentPassword + "5"
+            currentPassword = currentPassword + "5"
         }    else if let button = sender as? UIButton, button == button6 {
-                currentPassword = currentPassword + "6"
+            currentPassword = currentPassword + "6"
         }    else if let button = sender as? UIButton, button == button7 {
-                currentPassword = currentPassword + "7"
+            currentPassword = currentPassword + "7"
         }    else if let button = sender as? UIButton, button == button8 {
-                currentPassword = currentPassword + "8"
+            currentPassword = currentPassword + "8"
         }    else if let button = sender as? UIButton, button == button9 {
-                currentPassword = currentPassword + "9"
+            currentPassword = currentPassword + "9"
         }    else if let button = sender as? UIButton, button == button0 {
-                currentPassword = currentPassword + "0"
+            currentPassword = currentPassword + "0"
+        }
         
-        if currentPassword.count == 6 {
+        // Check password
+        if currentPassword.count == Constants.passwprdLength {
             let recoveredPassword = UserDefaults.standard.string(forKey: Constants.savePasswordKey)
             
             if let password = recoveredPassword, currentPassword == password {
-//                showAlert(title: "Great", message: "Password is correct!")
+                showAlert(title: "Great", message: "Password is correct!")
                 print("correct!!")
             } else {
-//                showAlert(title: "ERROR", message: "Password is wrong!")
+                showAlert(title: "ERROR", message: "Password is wrong!")
                 print("wrong!!")
             }
-
-            currentPassword = ""
+            
+            resetState()
         }
+        
+        if currentPassword.count >= 1 {
+            bubbleImageView1.isHighlighted = true
+        }
+        
+        if currentPassword.count >= 2 {
+            bubbleImageView2.isHighlighted = true
+        }
+        
+        if currentPassword.count >= 3 {
+            bubbleImageView3.isHighlighted = true
+        }
+        
     }
-}
+    
+    private func resetState() {
+        currentPassword = ""
+        
+        bubbleImageView1.isHighlighted = false
+        bubbleImageView2.isHighlighted = false
+        bubbleImageView3.isHighlighted = false
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        
+        alert.addAction(closeAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
