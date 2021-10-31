@@ -22,6 +22,9 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var button0: UIButton!
     
     
+    @IBOutlet weak var imageView1: UIImageView!
+    @IBOutlet weak var imageView2: UIImageView!
+    @IBOutlet weak var imageView3: UIImageView!
     
     
     override func viewDidLoad() {
@@ -63,20 +66,53 @@ class PasswordViewController: UIViewController {
                 currentPassword = currentPassword + "9"
         }    else if let button = sender as? UIButton, button == button0 {
                 currentPassword = currentPassword + "0"
+    }
+
+//      check password
         
-        if currentPassword.count == 6 {
+        if currentPassword.count == Constants.passwordLength {
             let recoveredPassword = UserDefaults.standard.string(forKey: Constants.savePasswordKey)
-            
+
             if let password = recoveredPassword, currentPassword == password {
-//                showAlert(title: "Great", message: "Password is correct!")
+                showAlert(title: "Great", message: "Password is correct!")
                 print("correct!!")
             } else {
-//                showAlert(title: "ERROR", message: "Password is wrong!")
+                showAlert(title: "ERROR", message: "Password is wrong!")
                 print("wrong!!")
             }
-
-            currentPassword = ""
+            
+            resetState()
         }
-    }
+        
+        if currentPassword.count >= 1 {
+            imageView1.isHighlighted = true
+        }
+        
+        if currentPassword.count >= 2 {
+            imageView2.isHighlighted = true
+        }
+        
+        if currentPassword.count >= 3 {
+            imageView3.isHighlighted = true
+        }
+        
 }
+    
+    private func resetState() {
+        currentPassword = ""
+        imageView1.isHighlighted = false
+        imageView2.isHighlighted = false
+        imageView3.isHighlighted = false
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        
+        alert.addAction(closeAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
 }
