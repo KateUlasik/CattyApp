@@ -68,8 +68,9 @@ class SetUpLockScreenViewController: UIViewController {
            save(password: password)
         
             showAlert(title: "Perfect", message: "Password saved succesfuly", actionTitle: "Continue", handler: { _ in
-                let passwordViewController = PasswordViewController(nibName: nil, bundle: nil)
-                self.present(passwordViewController, animated: true, completion: nil)
+                NotificationCenter.default.post(name: NSNotification.Name.reloadRoot, object: nil)
+                //let passwordViewController = PasswordViewController(nibName: nil, bundle: nil)
+                //self.present(passwordViewController, animated: true, completion: nil)
             })
         } else {
             showAlert(title: "ERROR", message: "Password is wrong!", actionTitle: "Try again!", handler: { _ in
