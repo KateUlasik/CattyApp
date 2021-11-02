@@ -9,6 +9,7 @@ import UIKit
 
 struct Constants {
     static let savePasswordKey = "this is password"
+    static let passwordLength = 3
 }
 
 class SetUpLockScreenViewController: UIViewController {
@@ -32,10 +33,10 @@ class SetUpLockScreenViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let _ = recover() {
-        let vc = PasswordViewController(nibName: nil, bundle: nil)
-        self.present(vc, animated: true, completion: nil)
-    }
+//        if let _ = recover() {
+//        let vc = PasswordViewController(nibName: nil, bundle: nil)
+//        self.present(vc, animated: true, completion: nil)
+//    }
     }
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
@@ -63,19 +64,24 @@ class SetUpLockScreenViewController: UIViewController {
     @IBAction func continueDidPress(_ sender: Any) {
         let password = passwordTextField.text
         
-        if let NotOptionalPassword = password, NotOptionalPassword.count == 6 {
+        if let NotOptionalPassword = password, NotOptionalPassword.count == Constants.passwordLength {
            save(password: password)
         
-            showAlert(title: "Perfect", message: "Password saved succesfuly")
+            showAlert(title: "Perfect", message: "Password saved succesfuly", actionTitle: "Continue", handler: { _ in
+                let passwordViewController = PasswordViewController(nibName: nil, bundle: nil)
+                self.present(passwordViewController, animated: true, completion: nil)
+            })
         } else {
-            showAlert(title: "ERROR", message: "Password is wrong!")
+            showAlert(title: "ERROR", message: "Password is wrong!", actionTitle: "Try again!", handler: { _ in
+                self.passwordTextField.text = nil
+            })
         }
     }
     
-    private func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String, actionTitle: String, handler: @escaping (UIAlertAction) -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let closeAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
-        
+        let closeAction = UIAlertAction(title: actionTitle, style: .cancel, handler: handler)
+      
         alert.addAction(closeAction)
         
         self.present(alert, animated: true, completion: nil)
