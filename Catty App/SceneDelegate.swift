@@ -7,15 +7,43 @@
 
 import UIKit
 
+extension NSNotification.Name {
+    static let reloadRoot = NSNotification.Name("ThisIsNotificationName")
+    static let loadContentViewController = NSNotification.Name("ThisIsNContentViewController")
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
         let window = UIWindow(windowScene: windowScene)
         
+        loadAppropriateViewController(window: window)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadRootDidSend(_:)), name: NSNotification.Name.reloadRoot, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadRootDidSend(_:)), name: NSNotification.Name.loadContentViewController, object: nil)
+    }
+    
+    @objc func reloadRootDidSend(_ anyNotification: Any) {
+        guard let notification = anyNotification as? NSNotification else { return }
+        
+        if notification.name == NSNotification.Name.reloadRoot {
+            if let win = self.window {
+            loadAppropriateViewController(window: win)
+        }
+        } else if  notification.name == NSNotification.Name.loadContentViewController {
+            if let win = self.window {
+            loadContentViewController(window: win)
+//        print("Notification was gotten!!!")
+            } else {
+                fatalError()
+            }
+        }
+    }
+    
+    private func loadAppropriateViewController(window: UIWindow) {
         let password = UserDefaults.standard.string(forKey: "this is password")
         
         if password == nil {
@@ -29,14 +57,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = instantiateViewController
         }
         
-    
-        
         window.makeKeyAndVisible()
-        
-        
         self.window = window
     }
-
+    
+ @objc func loadContentViewController(window: UIWindow) {
+       let viewC = UIViewController()
+        viewC.view.backgroundColor = .blue
+        
+        window.rootViewController = viewC
+        window.makeKeyAndVisible()
+        self.window = window
+    }
+    
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
