@@ -74,11 +74,13 @@ class PasswordViewController: UIViewController {
             let recoveredPassword = UserDefaults.standard.string(forKey: Constants.savePasswordKey)
 
             if let password = recoveredPassword, currentPassword == password {
-                showAlert(title: "Great", message: "Password is correct!")
-                print("correct!!")
+                showAlert(title: "Great", message: "Password is correct!", handler: { _ in
+                    NotificationCenter.default.post(name: NSNotification.Name.loadContentViewController, object: nil)
+                })
+//                print("correct!!")
             } else {
-                showAlert(title: "ERROR", message: "Password is wrong!")
-                print("wrong!!")
+                showAlert(title: "ERROR", message: "Password is wrong!", handler: {_ in } )
+//                print("wrong!!")
             }
             
             resetState()
@@ -105,9 +107,9 @@ class PasswordViewController: UIViewController {
         imageView3.isHighlighted = false
     }
     
-    private func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String, handler: @escaping (UIAlertAction) -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let closeAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        let closeAction = UIAlertAction(title: "Close", style: .cancel, handler: handler)
         
         alert.addAction(closeAction)
         
