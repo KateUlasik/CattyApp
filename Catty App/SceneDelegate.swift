@@ -61,9 +61,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
     }
     
- @objc func loadContentViewController(window: UIWindow) {
-       let viewC = UIViewController()
-        viewC.view.backgroundColor = .blue
+    @objc func loadContentViewController(window: UIWindow) {
+        let viewC = TagsViewController()
         
         window.rootViewController = viewC
         window.makeKeyAndVisible()

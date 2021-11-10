@@ -16,6 +16,8 @@
 		60231252271DB2B700C7612C /* SecondScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60231251271DB2B700C7612C /* SecondScreen.storyboard */; };
 		6095586E271F317E002954E5 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095586C271F317E002954E5 /* PasswordViewController.swift */; };
 		6095586F271F317E002954E5 /* PasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6095586D271F317E002954E5 /* PasswordViewController.xib */; };
+		8BA0F7FC273C0F1700569C4F /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA0F7FA273C0F1700569C4F /* TagsViewController.swift */; };
+		8BA0F7FD273C0F1700569C4F /* TagsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BA0F7FB273C0F1700569C4F /* TagsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		60231251271DB2B700C7612C /* SecondScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondScreen.storyboard; sourceTree = "<group>"; };
 		6095586C271F317E002954E5 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		6095586D271F317E002954E5 /* PasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordViewController.xib; sourceTree = "<group>"; };
+		8BA0F7FA273C0F1700569C4F /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
+		8BA0F7FB273C0F1700569C4F /* TagsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		6023123A2709058600C7612C /* Catty App */ = {
 			isa = PBXGroup;
 			children = (
+				8BA0F7F9273C0EFB00569C4F /* TagsViewController */,
 				6095586B271F30E0002954E5 /* PasswordViewController */,
 				6023123B2709058600C7612C /* AppDelegate.swift */,
 				6023123D2709058600C7612C /* SceneDelegate.swift */,
@@ -82,6 +87,15 @@
 				6095586D271F317E002954E5 /* PasswordViewController.xib */,
 			);
 			path = PasswordViewController;
+			sourceTree = "<group>";
+		};
+		8BA0F7F9273C0EFB00569C4F /* TagsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8BA0F7FA273C0F1700569C4F /* TagsViewController.swift */,
+				8BA0F7FB273C0F1700569C4F /* TagsViewController.xib */,
+			);
+			path = TagsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +158,7 @@
 				602312482709058600C7612C /* LaunchScreen.storyboard in Resources */,
 				602312452709058600C7612C /* Assets.xcassets in Resources */,
 				60231252271DB2B700C7612C /* SecondScreen.storyboard in Resources */,
+				8BA0F7FD273C0F1700569C4F /* TagsViewController.xib in Resources */,
 				602312432709058600C7612C /* Main.storyboard in Resources */,
 				6095586F271F317E002954E5 /* PasswordViewController.xib in Resources */,
 			);
@@ -158,6 +173,7 @@
 			files = (
 				602312402709058600C7612C /* SetUpLockScreenViewController.swift in Sources */,
 				6095586E271F317E002954E5 /* PasswordViewController.swift in Sources */,
+				8BA0F7FC273C0F1700569C4F /* TagsViewController.swift in Sources */,
 				6023123C2709058600C7612C /* AppDelegate.swift in Sources */,
 				6023123E2709058600C7612C /* SceneDelegate.swift in Sources */,
 			);
