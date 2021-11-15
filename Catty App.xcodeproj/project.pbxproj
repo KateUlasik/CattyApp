@@ -18,6 +18,10 @@
 		60934A8C273DAF5200F8AE2E /* TagsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60934A8A273DAF5200F8AE2E /* TagsViewController.xib */; };
 		6095586E271F317E002954E5 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095586C271F317E002954E5 /* PasswordViewController.swift */; };
 		6095586F271F317E002954E5 /* PasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6095586D271F317E002954E5 /* PasswordViewController.xib */; };
+		8B489F4D27428FF6003020E0 /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B489F4B27428FF6003020E0 /* TagsTableViewCell.swift */; };
+		8B489F4E27428FF6003020E0 /* TagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B489F4C27428FF6003020E0 /* TagsTableViewCell.xib */; };
+		8B489F56274295A0003020E0 /* CatDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B489F542742959F003020E0 /* CatDetailsViewController.swift */; };
+		8B489F57274295A0003020E0 /* CatDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B489F552742959F003020E0 /* CatDetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		60934A8A273DAF5200F8AE2E /* TagsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsViewController.xib; sourceTree = "<group>"; };
 		6095586C271F317E002954E5 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		6095586D271F317E002954E5 /* PasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordViewController.xib; sourceTree = "<group>"; };
+		8B489F4B27428FF6003020E0 /* TagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
+		8B489F4C27428FF6003020E0 /* TagsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsTableViewCell.xib; sourceTree = "<group>"; };
+		8B489F542742959F003020E0 /* CatDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailsViewController.swift; sourceTree = "<group>"; };
+		8B489F552742959F003020E0 /* CatDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatDetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,7 @@
 		6023123A2709058600C7612C /* Catty App */ = {
 			isa = PBXGroup;
 			children = (
+				8B489F4F2742955B003020E0 /* CatDetailsViewController */,
 				60934A88273DAF1900F8AE2E /* TagsViewController */,
 				6095586B271F30E0002954E5 /* PasswordViewController */,
 				6023123B2709058600C7612C /* AppDelegate.swift */,
@@ -83,6 +92,7 @@
 		60934A88273DAF1900F8AE2E /* TagsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8B489F4A27428FCC003020E0 /* Cells */,
 				60934A89273DAF5200F8AE2E /* TagsViewController.swift */,
 				60934A8A273DAF5200F8AE2E /* TagsViewController.xib */,
 			);
@@ -96,6 +106,24 @@
 				6095586D271F317E002954E5 /* PasswordViewController.xib */,
 			);
 			path = PasswordViewController;
+			sourceTree = "<group>";
+		};
+		8B489F4A27428FCC003020E0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8B489F4B27428FF6003020E0 /* TagsTableViewCell.swift */,
+				8B489F4C27428FF6003020E0 /* TagsTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8B489F4F2742955B003020E0 /* CatDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8B489F542742959F003020E0 /* CatDetailsViewController.swift */,
+				8B489F552742959F003020E0 /* CatDetailsViewController.xib */,
+			);
+			path = CatDetailsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,8 +185,10 @@
 			files = (
 				602312482709058600C7612C /* LaunchScreen.storyboard in Resources */,
 				602312452709058600C7612C /* Assets.xcassets in Resources */,
+				8B489F57274295A0003020E0 /* CatDetailsViewController.xib in Resources */,
 				60231252271DB2B700C7612C /* SecondScreen.storyboard in Resources */,
 				60934A8C273DAF5200F8AE2E /* TagsViewController.xib in Resources */,
+				8B489F4E27428FF6003020E0 /* TagsTableViewCell.xib in Resources */,
 				602312432709058600C7612C /* Main.storyboard in Resources */,
 				6095586F271F317E002954E5 /* PasswordViewController.xib in Resources */,
 			);
@@ -171,8 +201,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B489F56274295A0003020E0 /* CatDetailsViewController.swift in Sources */,
 				602312402709058600C7612C /* SetUpLockScreenViewController.swift in Sources */,
 				6095586E271F317E002954E5 /* PasswordViewController.swift in Sources */,
+				8B489F4D27428FF6003020E0 /* TagsTableViewCell.swift in Sources */,
 				60934A8B273DAF5200F8AE2E /* TagsViewController.swift in Sources */,
 				6023123C2709058600C7612C /* AppDelegate.swift in Sources */,
 				6023123E2709058600C7612C /* SceneDelegate.swift in Sources */,
