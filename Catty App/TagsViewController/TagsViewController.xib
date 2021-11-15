@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagsViewController" customModule="Catty_App" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="wd3-ca-JQM" id="7Rr-eF-lLR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is Catty Tags" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96T-IH-wLS">
+                    <rect key="frame" x="15" y="144" width="384" height="32.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wd3-ca-JQM">
+                    <rect key="frame" x="15" y="205" width="384" height="642"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="wd3-ca-JQM" firstAttribute="top" secondItem="96T-IH-wLS" secondAttribute="bottom" constant="28.5" id="3mJ-V5-VVr"/>
+                <constraint firstItem="96T-IH-wLS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8zq-Ig-OlV"/>
+                <constraint firstItem="96T-IH-wLS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="KuB-4P-eJj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wd3-ca-JQM" secondAttribute="bottom" constant="15" id="MAe-Ns-BuC"/>
+                <constraint firstItem="96T-IH-wLS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="V8H-AL-LLB"/>
+                <constraint firstItem="wd3-ca-JQM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="XtV-jn-HTm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wd3-ca-JQM" secondAttribute="trailing" constant="15" id="c8d-NO-5dn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="96T-IH-wLS" secondAttribute="trailing" constant="15" id="n3Y-lN-1yo"/>
+            </constraints>
+            <point key="canvasLocation" x="108.69565217391305" y="124.55357142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
