@@ -102,7 +102,7 @@ extension TagsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tag = tags[indexPath.row]
         
-        guard let url = URL(string: "https://cataas.com/cat\(tag)") else { return }
+        guard let url = URL(string: "https://cataas.com/cat/\(tag)") else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
