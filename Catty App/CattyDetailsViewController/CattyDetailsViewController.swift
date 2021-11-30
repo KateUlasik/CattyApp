@@ -11,11 +11,13 @@ class CattyDetailsViewController: UIViewController {
 
     @IBOutlet weak var catsImageView: UIImageView!
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     private var image: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        self.backgroundImageView.image = UIImage(named: "Lock_Screen_Background")
         self.catsImageView.image = image
         self.navigationItem.title = "Catty image"
     }
