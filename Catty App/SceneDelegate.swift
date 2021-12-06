@@ -33,10 +33,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if let win = self.window {
             loadAppropriateViewController(window: win)
         }
-        } else if  notification.name == NSNotification.Name.loadContentViewController {
+        } else if notification.name == NSNotification.Name.loadContentViewController {
             if let win = self.window {
-            loadContentViewController(window: win)
-//        print("Notification was gotten!!!")
+                let spot = (notification.object as? Spot) ?? Spot.tableViewSpot
+                loadContentViewController(window: win, spot: spot)
             } else {
                 fatalError()
             }
@@ -61,8 +61,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
     }
     
-    @objc func loadContentViewController(window: UIWindow) {
-        let vc = TagsViewController()
+    func loadContentViewController(window: UIWindow, spot: Spot) {
+        let vc: UIViewController
+        
+        switch spot {
+        case .collectionViewSpot:
+            vc = TagsCollectionViewController(nibName: "TagsCollectionViewController", bundle: nil)
+        case .tableViewSpot:
+            vc = TagsViewController()
+        }
+        
         let nc = UINavigationController(rootViewController: vc)
         
         window.rootViewController = nc

@@ -8,7 +8,6 @@
 import UIKit
 
 class CattyDetailsViewController: UIViewController {
-
     @IBOutlet weak var catsImageView: UIImageView!
     
     private var image: UIImage?

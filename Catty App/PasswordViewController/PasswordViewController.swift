@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum Spot {
+    case collectionViewSpot
+    case tableViewSpot
+}
+
 class PasswordViewController: UIViewController {
     var currentPassword: String = ""
 
@@ -74,13 +79,13 @@ class PasswordViewController: UIViewController {
             let recoveredPassword = UserDefaults.standard.string(forKey: Constants.savePasswordKey)
 
             if let password = recoveredPassword, currentPassword == password {
-                showAlert(title: "Great", message: "Password is correct!", handler: { _ in
-                    NotificationCenter.default.post(name: NSNotification.Name.loadContentViewController, object: nil)
-                })
-//                print("correct!!")
+                showAlert(title: "Great", message: "Pass is correct") { _ in
+                    NotificationCenter.default.post(name: NSNotification.Name.loadContentViewController, object: Spot.collectionViewSpot)
+                } openTableHandler: { _ in
+                    NotificationCenter.default.post(name: NSNotification.Name.loadContentViewController, object: Spot.tableViewSpot)
+                }
             } else {
                 showAlert(title: "ERROR", message: "Password is wrong!", handler: {_ in } )
-//                print("wrong!!")
             }
             
             resetState()
@@ -109,9 +114,20 @@ class PasswordViewController: UIViewController {
     
     private func showAlert(title: String, message: String, handler: @escaping (UIAlertAction) -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let closeAction = UIAlertAction(title: "Close", style: .cancel, handler: handler)
+        let actionClose = UIAlertAction(title: "Close", style: .cancel, handler: handler)
         
-        alert.addAction(closeAction)
+        alert.addAction(actionClose)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAlert(title: String, message: String, openCollectionHandler: @escaping (UIAlertAction) -> Void, openTableHandler: @escaping (UIAlertAction) -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let openCollectionAction = UIAlertAction(title: "Open in Collection", style: .default, handler: openCollectionHandler)
+        let openTableAction = UIAlertAction(title: "Open in Table", style: .default, handler: openTableHandler)
+        
+        alert.addAction(openCollectionAction)
+        alert.addAction(openTableAction)
         
         self.present(alert, animated: true, completion: nil)
     }

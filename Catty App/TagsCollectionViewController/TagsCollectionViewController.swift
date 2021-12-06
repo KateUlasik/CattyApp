@@ -1,39 +1,35 @@
 //
-//  TagsViewController.swift
+//  TagsCollectionViewController.swift
 //  Catty App
 //
-//  Created by Katerina Ulasik on 11.11.2021.
+//  Created by Siarhei Siliukou on 6.12.21.
 //
 
 import UIKit
 
-class TagsViewController: UIViewController {
-    
+class TagsCollectionViewController: UIViewController {
+
+    @IBOutlet weak var collectionView: UICollectionView!
     
     private var tags: [String] = []
-    
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        let collectionViewFlowLayout = UICollectionViewFlowLayout()
+        collectionViewFlowLayout.minimumLineSpacing = 50
+        collectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 10, height: 50)
+        
+        collectionView.collectionViewLayout = collectionViewFlowLayout
+        
+        collectionView.register(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CustomCollectionViewCell")
+        
         load()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        
-        let nib = UINib(nibName: "TagsTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "TagsTableViewCellIdentifier")
-        
-        self.navigationItem.title = "Catty tags"
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
-    
     
     private func load() {
         guard let url = URL(string: "https://cataas.com/api/tags") else { return }
@@ -48,7 +44,7 @@ class TagsViewController: UIViewController {
                         self.tags = object.filter({ (tag) -> Bool in
                             return tag.isEmpty == false
                         })
-                        self.tableView.reloadData()
+                        self.collectionView.reloadData()
                     }
                 } catch {
                     DispatchQueue.main.async {
@@ -67,47 +63,30 @@ class TagsViewController: UIViewController {
     }
 }
 
-extension TagsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+extension TagsCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tags.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tag = tags[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TagsTableViewCellIdentifier", for: indexPath) as! TagsTableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
+        
+        let tag = tags[indexPath.row]
         cell.configure(tag: tag)
-        color(cell: cell, for: tag)
         
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
-    }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let tag = tags[indexPath.row]
         
         loadCatBy(tag: tag)
         save(tag: tag)
         
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: "TagsTableViewCellIdentifier", for: indexPath)
-        //        let cell = self.tableView(tableView, cellForRowAt: indexPath)
-        //        color(cell: cell, for: tag)
-        
     }
-    
-    private func color(cell: UITableViewCell, for tag: String) {
-        if let value = get(), value == tag {
-            cell.layer.borderColor = UIColor.blue.cgColor
-            cell.layer.borderWidth = 3
-        } else {
-            cell.layer.borderColor = nil
-            cell.layer.borderWidth = 0
-        }
-    }
-    
+
     private func save(tag: String?) {
         UserDefaults.standard.set(tag, forKey: "user_default_favorite_key")
     }
@@ -136,4 +115,3 @@ extension TagsViewController: UITableViewDelegate, UITableViewDataSource {
         }.resume()
     }
 }
-
