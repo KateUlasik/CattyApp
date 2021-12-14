@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        loadAppropriateViewController(window: window)
+        loadAppropriateViewController(window: window, spot: Spot.collectionViewSpot)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadRootDidSend(_:)), name: NSNotification.Name.reloadRoot, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadRootDidSend(_:)), name: NSNotification.Name.loadContentViewController, object: nil)
@@ -31,19 +31,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if notification.name == NSNotification.Name.reloadRoot {
             if let win = self.window {
-            loadAppropriateViewController(window: win)
-        }
+                loadAppropriateViewController(window: win, spot: Spot.collectionViewSpot)
+            }
         } else if  notification.name == NSNotification.Name.loadContentViewController {
             if let win = self.window {
-            loadContentViewController(window: win)
-//        print("Notification was gotten!!!")
+                let spot = (notification.object as? Spot) ?? Spot.tableViewSpot
+                loadContentViewController(window: win, spot: spot)
+
             } else {
                 fatalError()
             }
         }
     }
     
-    private func loadAppropriateViewController(window: UIWindow) {
+    private func loadAppropriateViewController(window: UIWindow, spot: Spot) {
         let password = UserDefaults.standard.string(forKey: "this is password")
         
         if password == nil {
@@ -61,8 +62,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
     }
     
-    @objc func loadContentViewController(window: UIWindow) {
-        let vc = TagsViewController()
+    func loadContentViewController(window: UIWindow, spot: Spot) {
+        let vc: UIViewController
+        
+        switch spot {
+        case .collectionViewSpot:
+            vc = TagsCollectionViewController(nibName: "TagsCollectionViewController", bundle: nil)
+            
+        case .tableViewSpot:
+            vc = TagsViewController()
+        }
+        
         let nc = UINavigationController(rootViewController: vc)
         
         window.rootViewController = nc

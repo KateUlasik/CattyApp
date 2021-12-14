@@ -12,6 +12,7 @@ class CattyDetailsViewController: UIViewController {
     @IBOutlet weak var catsImageView: UIImageView!
     
     @IBOutlet weak var backgroundImageView: UIImageView!
+    
     private var image: UIImage?
     
     override func viewDidLoad() {
