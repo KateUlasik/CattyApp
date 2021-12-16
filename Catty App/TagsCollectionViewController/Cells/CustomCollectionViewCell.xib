@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,22 +20,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="224" height="65"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t9-02-6Iv">
-                                <rect key="frame" x="91" y="22" width="42" height="21"/>
+                                <rect key="frame" x="65" y="22" width="41.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJn-zE-NWg" userLabel="ButtonHeart">
+                                <rect key="frame" x="156" y="13" width="68" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="restButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="NfB-Oa-efp"/>
+                                    <action selector="startButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="llU-pn-NYN"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0eN-vW-iZx">
+                                <rect key="frame" x="50" y="-43" width="34" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart_White_for_Cell" highlightedImage="Heart_Black_for_Cell" translatesAutoresizingMaskIntoConstraints="NO" id="xq1-V5-R3V">
+                                <rect key="frame" x="171" y="13" width="41" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" red="0.95901304302793555" green="0.78313287807638476" blue="0.89917940459693013" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="7t9-02-6Iv" firstAttribute="centerY" secondItem="9yM-FO-acU" secondAttribute="centerY" id="Q7k-Mo-NFy"/>
-                            <constraint firstItem="7t9-02-6Iv" firstAttribute="centerX" secondItem="9yM-FO-acU" secondAttribute="centerX" id="ePd-FE-YQe"/>
+                            <constraint firstItem="7t9-02-6Iv" firstAttribute="centerX" secondItem="9yM-FO-acU" secondAttribute="centerX" constant="-26.5" id="ePd-FE-YQe"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" systemColor="systemTealColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="9yM-FO-acU" secondAttribute="bottom" id="5bd-vg-gdk"/>
                 <constraint firstAttribute="trailing" secondItem="9yM-FO-acU" secondAttribute="trailing" id="8Yi-qX-uos"/>
@@ -46,16 +62,14 @@
             <size key="customSize" width="224" height="65"/>
             <connections>
                 <outlet property="customLabel" destination="7t9-02-6Iv" id="dhb-1J-whO"/>
+                <outlet property="restButton" destination="iJn-zE-NWg" id="izK-k7-dln"/>
+                <outlet property="startButton" destination="iJn-zE-NWg" id="eBJ-9b-vCX"/>
             </connections>
-            <point key="canvasLocation" x="178.2608695652174" y="108.81696428571428"/>
+            <point key="canvasLocation" x="-62.318840579710148" y="0.33482142857142855"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="Heart_Black_for_Cell" width="30" height="27.5"/>
+        <image name="Heart_White_for_Cell" width="30" height="27.5"/>
     </resources>
 </document>

@@ -24,10 +24,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zx4-9n-qUd">
-                    <rect key="frame" x="87" y="384" width="240" height="128"/>
+                    <rect key="frame" x="11" y="192" width="393" height="522"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="240" id="2oZ-Oj-sRi"/>
-                        <constraint firstAttribute="height" constant="128" id="t4x-2M-29S"/>
+                        <constraint firstAttribute="width" constant="393" id="2oZ-Oj-sRi"/>
+                        <constraint firstAttribute="height" constant="522" id="t4x-2M-29S"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -36,12 +36,12 @@
             <constraints>
                 <constraint firstItem="QEd-Gh-Wye" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2gU-au-FIb"/>
                 <constraint firstItem="QEd-Gh-Wye" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Eza-67-OPH"/>
-                <constraint firstItem="zx4-9n-qUd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Q9d-Mr-eQg"/>
+                <constraint firstItem="zx4-9n-qUd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="5" id="Q9d-Mr-eQg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QEd-Gh-Wye" secondAttribute="bottom" id="d3o-wp-QMH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QEd-Gh-Wye" secondAttribute="trailing" id="pqa-eM-o7e"/>
                 <constraint firstItem="zx4-9n-qUd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tCI-g5-bf0"/>
             </constraints>
-            <point key="canvasLocation" x="26" y="104"/>
+            <point key="canvasLocation" x="24.637681159420293" y="103.79464285714285"/>
         </view>
     </objects>
     <resources>

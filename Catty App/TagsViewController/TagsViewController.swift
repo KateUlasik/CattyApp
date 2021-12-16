@@ -3,7 +3,6 @@
 //  Catty App
 //
 //  Created by Katerina Ulasik on 11.11.2021.
-//
 
 import UIKit
 
@@ -85,7 +84,7 @@ extension TagsViewController: UITableViewDelegate, UITableViewDataSource {
     
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 ////        let headerView = UIView()
-////        headerView.backgroundColor = UIColor.green
+//        headerView.backgroundColor = UIColor.green
 //           return headerView
 //       }
     
@@ -107,10 +106,10 @@ extension TagsViewController: UITableViewDelegate, UITableViewDataSource {
         let tag = tags[indexPath.section]
        let cell = tableView.dequeueReusableCell(withIdentifier: "TagsTableViewCellIdentifier", for: indexPath) as! TagsTableViewCell
         
-             cell.backgroundColor = UIColor.clear
-             cell.layer.borderColor = UIColor.gray.cgColor
-             cell.layer.borderWidth = 1
-             cell.layer.cornerRadius = 12
+//        cell.backgroundColor = UIColor.gray
+//             cell.layer.borderColor = UIColor.black.cgColor
+             cell.layer.borderWidth = 2
+             cell.layer.cornerRadius = 14
              cell.clipsToBounds = true
     
         cell.configure(tag: tag)
@@ -140,7 +139,7 @@ extension TagsViewController: UITableViewDelegate, UITableViewDataSource {
     private func color(cell: UITableViewCell, for tag: String) {
     if let value = get(), value == tag {
         cell.layer.borderColor = UIColor.blue.cgColor
-        cell.layer.borderWidth = 3
+        cell.layer.borderWidth = 10
     } else {
         cell.layer.borderColor = nil
         cell.layer.borderWidth = 0

@@ -23,7 +23,16 @@ class TagsCollectionViewController: UIViewController {
       let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = collectionViewFlowLayout
         collectionViewFlowLayout.minimumLineSpacing = 50
-        collectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 10, height: 50)
+        
+        collectionView.layer.cornerRadius = 0
+        collectionView.layer.borderWidth = 1
+        
+//        UICollectionViewCell.layer.cornerRadius = 10
+//        cell.layer.masksToBounds = true
+//        self.contentView.layer.borderColor = UIColor.clear.cgColor
+//        self.contentView.layer.masksToBounds = true
+        
+        collectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 50, height: 60)
         
         collectionView.collectionViewLayout = collectionViewFlowLayout
         
@@ -78,6 +87,26 @@ extension TagsCollectionViewController: UICollectionViewDelegate, UICollectionVi
         
         return cell
     }
+    
+    
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let tag = tags[indexPath.section]
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! TagsCollectionViewController
+//
+//             cell.backgroundColor = UIColor.clear
+//             cell.layer.borderColor = UIColor.black.cgColor
+//             cell.layer.borderWidth = 2
+//             cell.layer.cornerRadius = 14
+//             cell.clipsToBounds = true
+//
+//        cell.configure(tag: tag)
+////        color(cell: cell, for: tag)
+//
+//        return cell
+//    }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let tag = tags[indexPath.row]
