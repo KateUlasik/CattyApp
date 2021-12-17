@@ -12,7 +12,23 @@ class TagsCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var tags: [String] = []
-
+    private var selectedTags: [String] = []
+    
+    func addToFavorites(tag: String) {
+        selectedTags.append(tag)
+      save()
+    }
+    
+    func removeFromFavorites(tag: String) {
+        guard let index = selectedTags.firstIndex(of: tag) else { return }
+        
+            selectedTags.remove(at: index)
+        save()
+    }
+    
+    private func save() {
+        UserDefaults.standard.setValue(selectedTags, forKey: "Hidden_Key")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +55,12 @@ class TagsCollectionViewController: UIViewController {
       collectionView.register(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CustomCollectionViewCell")
        
         load()
+        
+        self.selectedTags = (UserDefaults.standard.value(forKey: "Hidden_Key") as? [String] ?? [])
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     private func load() {
@@ -83,7 +105,11 @@ extension TagsCollectionViewController: UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
         
         let tag = tags[indexPath.row]
-        cell.configure(tag: tag)
+        let isSelected = selectedTags.contains { someTag in
+            return someTag == tag
+        }
+        
+        cell.configure(tag: tag, isSelected: isSelected, parentViewController: self)
         
         return cell
     }

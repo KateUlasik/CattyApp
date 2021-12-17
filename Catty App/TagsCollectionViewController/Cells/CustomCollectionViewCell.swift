@@ -9,24 +9,39 @@ import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var customLabel: UILabel!
-    @IBOutlet weak var restButton: UIImageView!
-    @IBOutlet weak var startButton: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
+    var parentViewController: TagsCollectionViewController?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+//        self.contentView.layer.borderColor = UIColor.gray.cgColor
+        self.contentView.layer.borderWidth = 2
+        self.contentView.layer.cornerRadius = 25
+        self.contentView.clipsToBounds = true
+    }
 
-    @IBAction func startButtonPressed(_ sender: Any) {
-//        startButton.isHidden = true
-//        startButton.isUserInteractionEnabled = false
-//        perform(#selector, Selector, with: 1, afterDelay: 10)
-//            timeLeft = 0
-//            myTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(workoutStartVC.timerRunning), userInfo: nil, repeats: true)
+    @IBAction func favoriteButtonHandler(_ sender: Any) {
+        favoriteButton.isSelected = !favoriteButton.isSelected
+        
+        if let tag = titleLabel.text, favoriteButton.isSelected == true {
+            parentViewController?.addToFavorites(tag: tag)
+        } else if let tag = titleLabel.text, favoriteButton.isSelected == false {
+            
+            parentViewController?.removeFromFavorites(tag: tag)
+            }
     }
     
             func restButtonPressed(_ sender: Any) {
         print("rest mode button is pressed and i am showing a overlay right now with data count down")
     }
     
-    func configure(tag: String) {
-        customLabel.text = tag
+    func configure(tag: String, isSelected: Bool, parentViewController: TagsCollectionViewController?) {
+        self.titleLabel.text = tag
+        self.favoriteButton.isSelected = isSelected
+        self.parentViewController = parentViewController
     }
     
 }
